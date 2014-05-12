@@ -1,4 +1,4 @@
-50_Tips_and_Tricks_for_MongoDB_Developers
+###50 Tips and Tricks for MongoDB Developers
 =========================================
 
 50 Tips and Tricks for MongoDB Developers 的笔记备忘
@@ -223,7 +223,7 @@ occur with a replica set.
 
 备份，捕获异常
 
-Tip #21: Minimize disk access
+###Tip #21: Minimize disk access
 
 two functions：
 
@@ -281,4 +281,26 @@ for multiserver
 
 ###Tip #30: Always use replication, journaling, or both
 
+使用备份或者开启日志记录，或者两者都要
 
+###Tip #31: Do not depend on repair to recover data
+
+不要指望repair来恢复数据，除非没有别的办法：
+
+1 很慢
+2 会跳过损坏的数据（不复制直接丢掉）
+
+##Tip #32: Understand getlasterror
+
+getlasterror指的是所有操作中最后一个出错操作的error
+
+###Tip #33: Always use safe writes in development
+
+可能出现问题：
+
+What sort of things could go wrong with a write?
+A write could try to push something onto a non-array field, cause a duplicate key exception
+(trying to store two documents with the same value in a uniquely indexed field),
+remove an _id field, or a million other user errors.
+
+开发时要用Safe write ，这样可以知道很多错误。
