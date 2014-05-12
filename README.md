@@ -290,7 +290,7 @@ for multiserver
 1 很慢
 2 会跳过损坏的数据（不复制直接丢掉）
 
-##Tip #32: Understand getlasterror
+###Tip #32: Understand getlasterror
 
 getlasterror指的是所有操作中最后一个出错操作的error
 
